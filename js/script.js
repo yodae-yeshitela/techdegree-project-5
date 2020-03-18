@@ -201,7 +201,7 @@ function handleSearch(searchTerm) {
 const displayUsers = () => users.forEach(user => user.addToDisplay());
 
 const startApp = () => {
-    fetch("https://randomuser.me/api/?results=20&nat=us")
+    fetch("https://fsjs-public-api-backup.herokuapp.com/api")
         .then(data => data.json())
         .then(data => data.results)
         .then(usersData => usersData.map(user => users.push(new User(user))))

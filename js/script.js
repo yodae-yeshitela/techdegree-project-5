@@ -184,7 +184,7 @@ function handleSearch(searchTerm) {
     let count = 0
     errorMessage.hide();
     users.forEach(user => {
-        if (user.name.toLowerCase().includes(searchTerm) || searchTerm.length === 0) {
+        if (user.name.toLowerCase().includes(searchTerm.toLowerCase()) || searchTerm.length === 0) {
             user.show = true;
             user.card.show();
             count++;
@@ -201,7 +201,7 @@ function handleSearch(searchTerm) {
 const displayUsers = () => users.forEach(user => user.addToDisplay());
 
 const startApp = () => {
-    fetch("https://fsjs-public-api-backup.herokuapp.com/api")
+    fetch("https://randomuser.me/api/?results=12")
         .then(data => data.json())
         .then(data => data.results)
         .then(usersData => usersData.map(user => users.push(new User(user))))

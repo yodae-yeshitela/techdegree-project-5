@@ -1,0 +1,1 @@
+added styles are shadows on the cards and text color changes on the cards when hovered
